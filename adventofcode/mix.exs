@@ -27,7 +27,7 @@ defmodule AdventOfCode.MixProject do
 
   def cli do
     [
-      preferred_envs: ["aoc.test": "test"]
+      preferred_envs: ["aoc.test": :test]
     ]
   end
 end

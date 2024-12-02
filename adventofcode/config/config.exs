@@ -1,5 +1,4 @@
 import Config
 
 config :aoc,
-  prefix: AdventOfCode.Solutions,
-  generate_comments: true
+  prefix: AdventOfCode.Solutions
