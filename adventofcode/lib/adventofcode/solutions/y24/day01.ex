@@ -22,7 +22,14 @@ defmodule AdventOfCode.Solutions.Y24.Day01 do
     |> Enum.sum()
   end
 
-  # def part_two(problem) do
-  #   problem
-  # end
+  def part_two(problem) do
+    problem
+    |> Enum.unzip()
+    |> then(fn {left, right} -> {left, Enum.frequencies(right)} end)
+    |> then(fn {left, frequencies} ->
+      left
+      |> Enum.map(fn x -> x * Map.get(frequencies, x, 0) end)
+      |> Enum.sum()
+    end)
+  end
 end
