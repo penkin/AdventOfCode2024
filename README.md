@@ -1,21 +1,10 @@
-# Adventofcode
+# Advent of Code 2024
 
-**TODO: Add description**
+My first attempt at learning [Elixir](https://elixir-lang.org/) via
+the[Advent of Code 2024](https://adventofcode.com/2024).
 
-## Installation
+The code here is in no way great, it's all me stumbling through
+the docs, AI chats and friends.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `adventofcode` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:adventofcode, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/adventofcode>.
-
+Using the [aoc](https://github.com/lud/aoc) helpers for fetching
+inputs and generating files and tests.
