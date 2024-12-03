@@ -18,7 +18,7 @@ defmodule AdventOfCode.Solutions.Y24.Day02 do
   end
 
   def part_two(problem) do
-      problem
+    problem
     |> Enum.count(&make_safe/1)
   end
 
@@ -42,10 +42,14 @@ defmodule AdventOfCode.Solutions.Y24.Day02 do
 
   defp check_safe_down(floor) do
     case floor do
-      [_] -> true
+      [_] ->
+        true
+
       [a, b | rest] when (a - b) in 1..3 ->
-        check_safe_down([b | rest]) 
-      _ -> false
+        check_safe_down([b | rest])
+
+      _ ->
+        false
     end
   end
 
@@ -54,13 +58,12 @@ defmodule AdventOfCode.Solutions.Y24.Day02 do
       true
     else
       floor
-        |>Enum.with_index()
-        |>Enum.any?(fn {_, index} -> 
-          floor
-          |>List.delete_at(index)
-          |>check_safe()
-        end)
+      |> Enum.with_index()
+      |> Enum.any?(fn {_, index} ->
+        floor
+        |> List.delete_at(index)
+        |> check_safe()
+      end)
     end
   end
-
 end
