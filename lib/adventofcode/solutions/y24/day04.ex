@@ -10,26 +10,36 @@ defmodule AdventOfCode.Solutions.Y24.Day04 do
 
   def part_one(problem) do
     pattern = ["X", "M", "A", "S"]
+
     directions = [
-      {0, 1},    # right
-      {0, -1},   # left
-      {1, 0},    # down
-      {-1, 0},   # up
-      {1, 1},    # diagonal down-right
-      {-1, -1},  # diagonal up-left
-      {1, -1},   # diagonal down-left
-      {-1, 1}    # diagonal up-right
+      # right
+      {0, 1},
+      # left
+      {0, -1},
+      # down
+      {1, 0},
+      # up
+      {-1, 0},
+      # diagonal down-right
+      {1, 1},
+      # diagonal up-left
+      {-1, -1},
+      # diagonal down-left
+      {1, -1},
+      # diagonal up-right
+      {-1, 1}
     ]
+
     for y <- 0..(length(problem) - 1),
         x <- 0..(length(Enum.at(problem, 0)) - 1),
         reduce: [] do
       acc ->
-          case check_pattern(pattern, directions, problem, x, y) do
+        case check_pattern(pattern, directions, problem, x, y) do
           [] -> acc
           patterns -> patterns ++ acc
         end
     end
-      |>length
+    |> length
   end
 
   def part_two(problem) do
@@ -78,20 +88,28 @@ defmodule AdventOfCode.Solutions.Y24.Day04 do
     bottom_y = y + 1
 
     cond do
-      "A" != char -> false
-      left_x < 0 or top_y < 0 -> false
-      right_x >= length(Enum.at(grid, 0)) -> false  
-      bottom_y >= length(grid) -> false
-      true -> 
+      "A" != char ->
+        false
+
+      left_x < 0 or top_y < 0 ->
+        false
+
+      right_x >= length(Enum.at(grid, 0)) ->
+        false
+
+      bottom_y >= length(grid) ->
+        false
+
+      true ->
         top_left = Enum.at(Enum.at(grid, top_y), left_x)
         top_right = Enum.at(Enum.at(grid, top_y), right_x)
         bottom_left = Enum.at(Enum.at(grid, bottom_y), left_x)
         bottom_right = Enum.at(Enum.at(grid, bottom_y), right_x)
 
-        ((top_left == "M" and bottom_right == "S") or 
-          (top_left == "S" and bottom_right == "M")) and
-        ((top_right == "M" and bottom_left == "S") or 
-          (top_right == "S" and bottom_left == "M"))
+        ((top_left == "M" and bottom_right == "S") or
+           (top_left == "S" and bottom_right == "M")) and
+          ((top_right == "M" and bottom_left == "S") or
+             (top_right == "S" and bottom_left == "M"))
     end
   end
 end

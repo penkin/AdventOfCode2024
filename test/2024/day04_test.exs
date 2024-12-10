@@ -30,7 +30,7 @@ defmodule AdventOfCode.Solutions.Y24.Day04Test do
   end
 
   @part_one_solution 2644
-  
+
   test "part one solution" do
     assert {:ok, @part_one_solution} == AoC.run(2024, 4, :part_one)
   end
@@ -48,12 +48,12 @@ defmodule AdventOfCode.Solutions.Y24.Day04Test do
     MAMMMXMMMM
     MXMXAXMASX
     """
- 
-   assert 9 == solve(input, :part_two)
+
+    assert 9 == solve(input, :part_two)
   end
 
   @part_two_solution 1952
-  
+
   test "part two solution" do
     assert {:ok, @part_two_solution} == AoC.run(2024, 4, :part_two)
   end
