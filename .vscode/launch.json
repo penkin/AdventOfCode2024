@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "mix_task",
+      "name": "mix aoc.run --year 2024 --day 4",
+      "request": "launch",
+      "task": "aoc.run",
+      "projectDir": "${workspaceFolder}",
+      "exitAfterTaskReturns": false,
+      "excludeModules": [
+        "Bcrypt.Base"
+      ],
+      "debugAutoInterpretAllModules": false,
+      "debugInterpretModulesPatterns": [
+        "AdventOfCode*"
+      ]
+    },
+    {
+      "type": "mix_task",
+      "name": "mix aoc.test --year 2024 --day 4",
+      "request": "launch",
+      "task": "test",
+      "projectDir": "${workspaceFolder}",
+      "exitAfterTaskReturns": true,
+      "excludeModules": [
+        "Bcrypt.Base"
+      ],
+      "debugAutoInterpretAllModules": false,
+      "debugInterpretModulesPatterns": [
+        "AdventOfCode*"
+      ]
+    }
+  ]
+}
