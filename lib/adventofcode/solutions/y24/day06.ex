@@ -110,8 +110,6 @@ defmodule AdventOfCode.Solutions.Y24.Day06 do
           MapSet.put(moves, {guard, direction})
         )
       else
-        # move(size, grid, objects, guard, direction, moves)
-
         if MapSet.member?(moves, {guard, direction}) do
           true
         else
